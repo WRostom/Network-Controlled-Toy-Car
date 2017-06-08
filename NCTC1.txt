@@ -1,0 +1,32 @@
+#include <ESP8266WiFi.h>
+#include "Adafruit_MQTT.h"
+#include "Adafruit_MQTT_Client.h"
+#include <WiFiClient.h>
+#include <ESP8266HTTPClient.h>
+#include <ESP8266httpUpdate.h>
+/************************* WiFi Access Point & MQTT Stuff *********************************/
+
+#define WLAN_SSID //Wireless SSID here
+#define WLAN_PASS //Wifi Password
+
+#define MQTT_SERVER //Server hostname/ip address
+#define MQTT_SERVERPORT 1883 // use 8883 for SSL
+#define MQTT_USERNAME //MQTT server username (if any)
+#define MQTT_KEY //MQTT server password (if any)
+#define MQTT_TOPIC //MQTT TOPIC
+
+/******************************************************************************************/
+
+//MQTT G-Variables
+WiFiClient client;
+Adafruit_MQTT_Client mqtt(&client, MQTT_SERVER, MQTT_SERVERPORT, MQTT_USERNAME, MQTT_KEY);
+
+//MQTT Subscribe topic variable for /wrostom/dev/onoff and assign to variable
+Adafruit_MQTT_Subscribe onoffbutton = Adafruit_MQTT_Subscribe(&mqtt, MQTT_USERNAME MQTT_TOPIC);
+
+//Motor Variables
+int in1Pin = 14;
+int in2Pin = 12;
+int in3Pin = 5;
+int in4Pin = 16;
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
