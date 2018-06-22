@@ -2,7 +2,7 @@
 Turning a normal RC car into a car that can be controller over the network (technically still RC, but you get it).
 
 ## Hardware:
-- ESP8266-12E — Car Brain
+- ESP8266-12E — "Car Brains"
 
 - L2932D Half-H Drivers — Used to control toy car motors (front & back)
 
