@@ -1,4 +1,4 @@
-# Network-Controlled-Toy-Car
+# Network Controlled Toy Car
 Turning a normal RC car into a car that can be controller over the network (technically still RC, but you get it).
 
 ## Hardware:
